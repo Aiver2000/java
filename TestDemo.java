@@ -1,85 +1,215 @@
-import java.util.Arrays;
-
 public class TestDemo {
-
-
     /**
-     * 【数组】偶数放在奇数前面
-     * @param array
-     */
-    public static void func(int[] array){
-        int i = 0;
-        int j = array.length-1;
-        while(i<j){
-            while (array[i]%2 ==0 && i<j){
-                i++;
-            }
-            while (array[j]%2 !=0 && j>i){
-                j--;
-            }
-            int tmp = array[i];
-            array[i] = array[j];
-            array[j] = tmp;
-        }
-    }
-
-
-    /**
-     * [拷贝数组] for
-     * [2]Array.copyOf
-     * [3] array.clone() 产生一个副本
-     * [4] 。。。native
+     * 静态变量，只能定义为类变量，不能定义在普通方法中
+     * 静态方法中，只能调用静态方法（或new对象调用普通方法）
+     * 普通方法，可以调用普通方法，可以调用静态方法
      *
-     * 深浅拷贝：人为实现
-     * 深：拷贝后两数据互不影响 ----多拷贝一份对象
-     * 浅：拷贝后，修改一个会影响另一个
-     * @param array
-     * @return
+     *
      */
-    public static int[] copyArray(int[] array){
-        int[] copy = new int[array.length];
-        for (int i = 0; i < array.length; i++) {
-            copy[i] = array[i];
+
+
+
+
+
+
+    class Calculator{
+        private int num1;
+        private int num2;
+
+        public int getNum1() {
+            return num1;
         }
-        return copy;
+
+        public void setNum1(int num1) {
+            this.num1 = num1;
+        }
+
+        public int getNum2() {
+            return num2;
+        }
+
+        public void setNum2(int num2) {
+            this.num2 = num2;
+        }
+
+        public int add(){
+            return num1+num2;
+        }
+        public int sub(){
+            return num1-num2;
+        }
+        public double mul(){
+            return num1*num2;
+        }
+        public double div(){
+            return num1*1.0/num2;
+        }
+
+    }
+
+    class MyValue{
+        public int val;
+    }
+    public class classandobj {
+        public static void swap(MyValue myV1,MyValue myV2){
+            int tmp = myV1.val;
+            myV1.val = myV2.val;
+            myV2.val = tmp;
+        }
+        public static void main(String[] args) {
+            MyValue myValue1 = new MyValue();
+            myValue1.val = 10;
+            MyValue myValue2 = new MyValue();
+            myValue2.val = 20;
+            swap(myValue1,myValue2);
+            System.out.println(myValue1.val+" "+ myValue2.val);
+
+        }
+
+
+        public static void main1(String[] args) {
+            Calculator calculator = new Calculator();
+            calculator.setNum1(1);
+            calculator.setNum2(2);
+            System.out.println(calculator.add());
+
+        }
+
     }
 
 
-    public static void main(String[] args) {
-        int[][] array = {{1,2},{1,2,3}};
-        for (int[] ret :array) {
-            for(int x:ret){
-                System.out.print(x+" ");
-            }
-            System.out.println();
-        }
-        int[][] array2 = new int[2][];
-        System.out.println(Arrays.deepToString(array2));
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+class Person{
+    private String name;
+    public int age;
+
+
+
+    public Person(){
+        this("高博");
+        System.out.println("Person()::不带参数构造方法");
     }
+    {
+        System.out.println("实例代码块");
+    }
+    static {
+        System.out.println("静态代码块");
+    }
+    public Person(String name){
+        this.name = name;
+        System.out.println("Person()::带参数的构造方法");
+    }
+
+    public String getName() {
+        return name;
+    }
+
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public void eat(){
+        System.out.println(name+" 吃饭 ");
+        int size = 0;
+    }
+    private void sleep(){
+        System.out.println(name+"正在睡觉");
+    }
+
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "name='" +  name+ '\'' +
+                ", age=" + age +
+
+                '}';
+    }
+*/
+/*    public String toString(){
+        return "姓名"+name+"年龄"+age;
+    }*//*
+
+}
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*    public static void main(String[] args) {
+        Person person = new Person();
+        System.out.println(person.getName());
+        person.setName("huya");
+        System.out.println(person);
+
+    }*/
+
+
+
+
+ /*   public static void main2(String[] args) {
+        //Person person = new Person();
+        //Person.count = 1999;
+        //System.out.println(Person.count);
+        System.out.println("###################");
+        //Person person1 = new Person();
+        //Person.count ++;
+        //System.out.println(Person.count);
+    }
+
     public static void main1(String[] args) {
-        int[] array = {1,2,3,4,5,6,7};
-        int[][] array1 = {{1,2,3},{4,5,6}};
-        int[][] array2 = new int[][] {{1,2,3},{1,2,3}};
-        int[][] array3 = new int[2][];
-        //int[] copy = array.clone();
-        for(int i = 0;i<array1.length;i++){
-            for (int j = 0; j < array1[i].length; j++) {
-                System.out.print(array1[i][j]+" ");
-            }
-            System.out.println();
-        }
-        System.out.println("=======================");
-        for (int[] ret :array1) {
-            for(int x:ret){
-                System.out.print(x+" ");
-            }
-            System.out.println();
-        }
-        System.out.println("=======================");
+        //Person person = null;
+        int a;
+        Person person = new Person();
+        //person.name = "lqx";
+        //System.out.println(person.name);
+        System.out.println(person.age);
+        //System.out.println(person.add);
 
-        System.out.println(Arrays.deepToString(array1));
-        //System.out.println(Arrays.toString(array1));
 
+        Person person1 = new Person();
+        //System.out.println(person1.name);
+        System.out.println(person1.age);
+        //System.out.println(person1.add);
     }
+
+}
+
+
+*/
+
 }
