@@ -36,6 +36,14 @@ public class MyLinkedList {
         }
         System.out.println();
     }
+    public void display2(ListNode newHead){
+        ListNode cur = newHead;
+        while (cur!=null){
+            System.out.print(cur.val+" ");
+            cur = cur.next;
+        }
+        System.out.println();
+    }
     public boolean contains(int key){
         ListNode cur = this.head;
         while (cur!=null){
@@ -158,6 +166,55 @@ public class MyLinkedList {
         }
     }
 
+
+    public ListNode reverseList(){
+        if(head == null){
+            return null;
+        }
+        ListNode cur = head;
+        ListNode curNext = head.next;
+        ListNode prev = null;
+        while(cur!= null){
+            curNext=cur.next;
+            cur.next = prev;
+            prev = cur;
+            cur = curNext;
+        }
+        return prev;
+    }
+
+    public ListNode middleNode(){
+        if(head == null){
+            return null;
+        }
+        ListNode fast = head;
+        ListNode slow = head;
+        while (fast !=null && fast.next != null){
+            fast=fast.next.next;
+            slow=slow.next;
+        }
+        return slow;
+    }
+
+    public ListNode FindKthToTail(int k) {
+        if(head == null || k<=0 ){
+            return null;
+        }
+
+        ListNode fast = head;
+        ListNode slow = head;
+
+        while(k>1){
+            fast = fast.next;
+            k--;
+        }
+        while(fast.next != null){
+            fast = fast.next;
+            slow = slow.next;
+        }
+        return slow;
+
+    }
 
 
 
