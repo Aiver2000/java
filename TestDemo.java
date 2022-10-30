@@ -1,6 +1,36 @@
 public class TestDemo {
 
     public static void main(String[] args) {
+        DoubleLinkedList doubleLinkedList = new DoubleLinkedList();
+        doubleLinkedList.addFirst(1);
+        doubleLinkedList.addFirst(2);
+        doubleLinkedList.addFirst(3);
+        doubleLinkedList.display();
+        doubleLinkedList.addIndex(3,4);
+        doubleLinkedList.display();
+
+
+    }
+    public static void main3(String[] args) {
+        DoubleLinkedList doubleLinkedList = new DoubleLinkedList();
+        doubleLinkedList.addFirst(1);
+        doubleLinkedList.addFirst(2);
+        doubleLinkedList.addFirst(3);
+
+        System.out.println(doubleLinkedList.contains(1));
+        doubleLinkedList.addLast(4);
+        doubleLinkedList.addLast(5);
+        doubleLinkedList.addLast(6);
+        doubleLinkedList.addLast(6);
+
+        System.out.println(doubleLinkedList.size());
+        doubleLinkedList.remove(6);
+        doubleLinkedList.display();
+
+
+
+    }
+    public static void main2(String[] args) {
         MyLinkedList myLinkedList = new MyLinkedList();
         //myLinkedList.createList();
         myLinkedList.addFirst(1);
