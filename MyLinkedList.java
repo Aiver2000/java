@@ -192,6 +192,7 @@ public class MyLinkedList {
         while (fast !=null && fast.next != null){
             fast=fast.next.next;
             slow=slow.next;
+            System.out.println();
         }
         return slow;
     }
@@ -213,6 +214,93 @@ public class MyLinkedList {
             slow = slow.next;
         }
         return slow;
+
+    }
+    public ListNode partition(int x) {
+        ListNode bs = null;
+        ListNode be = null;
+        ListNode as = null;
+        ListNode ae = null;
+        ListNode cur = head;
+        if(head.next==null){
+            return head;
+        }
+        while (cur != null){
+            if(cur.val <x ){
+                if(bs==null){
+                    bs=be=cur;
+                }else {
+                    be.next=cur;
+                    be = cur;
+                }
+            }else {
+                if(as == null){
+                    as = ae = cur;
+                }else {
+                    ae.next = cur;
+                    ae=cur;
+                }
+            }
+            cur = cur.next;
+        }
+        if(bs == null){
+            return as;
+        }else{
+
+            be.next=as;
+            if(ae!=null){
+                ae.next=null;
+            }
+            return bs;
+        }
+    }
+
+    public ListNode deleteDuplication(){
+        ListNode cur = head;
+        ListNode newHead = new ListNode(-1);
+        ListNode tmp = newHead;
+        while (cur != null){
+            if(cur.next!= null && cur.val == cur.next.val) {
+                while (cur.next!=null&&cur.val == cur.next.val) {
+                    cur = cur.next;
+                }
+                cur=cur.next;
+            }else {
+                tmp.next=cur;
+                cur =cur.next;
+                tmp=tmp.next;
+            }
+
+        }
+        tmp.next=null;
+        return newHead.next;
+
+    }
+    public boolean chkPalindrome() {
+        ListNode fast = head;
+        ListNode slow = head;
+        ListNode cur = slow.next;
+        ListNode curNext = cur;
+        while (fast!=null && fast.next!=null){
+            fast=fast.next.next;
+            slow=slow.next;
+        }
+        while(cur != null){
+            curNext=cur.next;
+            cur.next = slow;
+            cur = curNext;
+            slow=slow.next;
+        }
+        while (slow!=head || slow != head.next ){
+            if(head.val == slow.val){
+                head=head.next;
+                slow=slow.next;
+            }else {
+                return false;
+            }
+        }
+        return true;
+
 
     }
 

@@ -8,11 +8,12 @@ public class TestDemo {
         myLinkedList.addFirst(3);
         myLinkedList.addFirst(4);
         myLinkedList.addFirst(5);
-        myLinkedList.remove(5);
+       // myLinkedList.remove(5);
         myLinkedList.display();
+
         //myLinkedList.reverseList();
         //myLinkedList.display();
-        myLinkedList.display2(myLinkedList.reverseList());
+        //myLinkedList.display2(myLinkedList.reverseList());
     }
     public static void main1(String[] args) {
         MyLinkedList myLinkedList = new MyLinkedList();
