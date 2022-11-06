@@ -88,4 +88,15 @@ public class myheap {
         return elem[0];
     }
 
+    public void heapSort(){
+        int end = this.usedSize-1;
+        while (end>0){
+            int tmp = elem[0];
+            elem[0] = elem[end];
+            elem[end] = tmp;
+            shiftDown(0,end);
+            end--;
+        }
+    }
+
 }
