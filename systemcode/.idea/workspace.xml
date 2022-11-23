@@ -25,41 +25,42 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="project.structure.last.edited" value="SDKs" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
-  <component name="RunManager" selected="Application.Demo13">
-    <configuration name="Demo10" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="thread.Demo10" />
+  <component name="RunManager" selected="Application.Demo26">
+    <configuration name="Demo22" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="thread.Demo22" />
       <module name="systemcode" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Demo11" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="thread.Demo11" />
+    <configuration name="Demo23" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="thread.Demo23" />
       <module name="systemcode" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Demo12" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="thread.Demo12" />
+    <configuration name="Demo24" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="thread.Demo24" />
       <module name="systemcode" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Demo13" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="thread.Demo13" />
+    <configuration name="Demo25" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="thread.Demo25" />
       <module name="systemcode" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Demo9" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="thread.Demo9" />
+    <configuration name="Demo26" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="thread.Demo26" />
       <module name="systemcode" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -67,11 +68,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Demo13" />
-        <item itemvalue="Application.Demo12" />
-        <item itemvalue="Application.Demo11" />
-        <item itemvalue="Application.Demo10" />
-        <item itemvalue="Application.Demo9" />
+        <item itemvalue="Application.Demo26" />
+        <item itemvalue="Application.Demo25" />
+        <item itemvalue="Application.Demo24" />
+        <item itemvalue="Application.Demo23" />
+        <item itemvalue="Application.Demo22" />
       </list>
     </recent_temporary>
   </component>
