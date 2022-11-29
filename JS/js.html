@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- <div class="one">
+        hello
+    </div>
+    <div id="two">
+        hello two
+    </div>
+    <ul>
+        <li>aaa</li>
+        <li>bbb</li>
+        <li>vvv</li>
+        <li>ccc</li>
+        <li>ddd</li>
+
+    </ul> -->
+
+    <!-- <button>按钮</button> -->
+    <!-- <div id="screen"> 
+        <ul>
+            <li>aaa</li>
+            <li>aaa</li>
+            <li>aaa</li>
+
+        </ul>
+    </div>
+    <button id="btn">获取内容按钮</button>
+    <button id="btn2">修改内容按钮</button> -->
+    <!-- <div id="screen">
+        0
+    </div> -->
+    <!-- <input type="text" id="screen" value="0">
+    <button id="plus"> + </button> -->
+
+    
+    <!-- <img src="../HTML/cat.jpg" alt=""> -->
+
+    <!-- <input type="checkbox" id="all"> 我全都要 <br>
+    <input type="checkbox" class="girl"> 貂蝉 <br>
+    <input type="checkbox" class="girl"> 妲己 <br>
+    <input type="checkbox" class="girl"> 孙尚香 <br>
+    <input type="checkbox" class="girl"> 安琪拉 <br> -->
+
+
+
+    <!-- <div style="font-size:20px">这是一个文本</div> -->
+
+    <!-- <style>
+        .light{
+            background-color: #fff;
+            color:#000;
+        }
+        .dark{
+            background-color: rgb(49, 40, 184);
+            color:#fff;
+        }
+
+    </style>
+
+    <div class="light" style="height:1000px">这是一段话</div>
+    <button>关灯</button> -->
+
+    <!-- <style>
+
+
+    </style>
+    
+    <div class="container">
+
+
+    </div>
+    <button>删除 div </button>
+
+
+    <script>
+        let newDiv = document.createElement('div');
+        newDiv.id = 'newDiv';
+        newDiv.className='one';
+        newDiv.innerHTML = 'hello';
+        console.log(newDiv);
+
+        let container = document.querySelector('.container');
+        container.appendChild(newDiv);
+
+        let button = document.querySelector('button');
+        button.onclick = function(){
+            container.removeChild(newDiv);
+        } -->
+
+        // let div = document.querySelector('div');
+        // let button = document.querySelector('button');
+        // button.onclick = function(){
+        //     if(div.className == 'light'){
+        //         div.className = 'dark';
+        //         button.innerHTML = '开灯';
+        //     }else if(div.className == 'dark'){
+        //         div.className = 'light';
+        //         button.innerHTML = '关灯';
+        //     }
+        // }
+
+
+
+
+        // let div = document.querySelector('div');
+        // div.onclick = function(){
+        //     console.log(parseInt(div.style.fontSize));
+        //     let fontSize = parseInt(div.style.fontSize);
+        //     fontSize += 5;
+        //     div.style.fontSize = fontSize+'px';
+        // }
+
+
+
+
+
+
+
+
+        // let all = document.querySelector('#all');
+        // let girls = document.querySelectorAll('.girl');
+
+        // all.onclick = function(){
+        //     for(let i = 0;i<girls.length;i++){
+        //         girls[i].checked = all.checked;
+        //     }
+        // }
+
+        // for(let i = 0;i<girls.length;i++){
+        //     girls[i].onclick = function(){
+        //         all.checked = checkGirls(girls);
+        //     }
+        // }
+
+        // function checkGirls(girls){
+        //     for(let i = 0;i<girls.length;i++){
+        //         if(!girls[i].checked){
+        //             return '';
+        //         }
+        //     }
+        //     return 'checked';
+        // }
+
+
+        // let input = document.querySelector('input');
+        // input.onclick = function(){
+        //     if(input.value == '播放'){
+        //         input.value = '暂停';
+        //     }else if(input.value == '暂停'){
+        //         input.value = '播放';
+        //     }
+        // }
+    
+        // let img = document.querySelector('img');
+        // img.onclick = function(){
+        //     console.dir(img);
+        //     if(img.src.indexOf('cat.jpg') >=0){
+        //         img.src='boy.jpg';
+        //     }else if(img.src.indexOf('boy.jpg') >= 0){
+        //         img.src = '../HTML/cat.jpg';
+        //     }
+
+        // }
+
+
+
+
+
+
+
+
+
+
+        // let plusBtn = document.querySelector('#plus');
+        // plusBtn.onclick = function(){
+        //     let screen = document.querySelector('#screen');
+        //     //let val = screen.innerHTML;
+        //     let val = screen.value;
+        //     val = parseInt(val);
+        //     console.log(typeof(val));
+        //     val+=1;
+        //     screen.value = val;
+        // }
+
+
+
+
+        // let btn = document.querySelector('#btn');
+        // btn.onclick = function(){
+        //     let screen = document.querySelector('#screen');
+        //     console.log(screen.innerHTML);
+        // }
+        // let btn2 = document.querySelector('#btn2');
+        // btn2.onclick = function(){
+        //     let screen = document.querySelector('#screen');
+        //     screen.innerHTML = '<h1>修改后的内容</h1>';
+        // }
+
+
+
+        // let button = document.querySelector('button');
+        // button.onclick = function(){
+        //     alert('hello');
+        // }
+        
+
+        // function f(){
+        //     alert('hello');
+        // }
+
+
+        // let obj = document.querySelector('ul li');
+        // console.log(obj);
+
+        // let div = document.querySelector('.one');
+        // console.log(div);
+        // let obj = document.querySelector('#two');
+        // console.log(obj);
+
+
+
+        // let student = {
+        //     name:'caixuk',
+        //     age:20,
+        //     height:180,
+        //     weight:150,
+
+        //     sing:function(){
+        //         console.log("基尼太么米");
+        //     },
+
+        //     jump:function(){
+        //         console.log("tiaowu");
+        //     },
+        // }
+
+        // console.log(student.name);
+        // console.log(student.age);
+        // student.sing();
+
+
+
+
+
+
+        // let num = 10;
+        // function hello(){
+        //     console.log(num);
+        // }
+
+        // hello();
+
+        // let f = function(){
+        //     console.log('nihao');
+        // }
+
+        // //let f = hello;
+        // console.log(typeof f);
+        // f();
+
+
+
+
+
+
+        // function add(a,b,c,d,e,f,g){
+        //     // if(a === undefined){
+        //     //     a=0;
+        //     // }
+        //     a=a||0;
+        //     b=b||0;
+        //     c=c||0;
+        //     d=d||0;
+        //     e=e||0;
+        //     f=f||0;
+        //     g=g||0;
+
+        //     return a+b+c+d+e+f+g;
+        // }
+
+        // let result = add(10,20);
+        // console.log(result);
+
+
+
+        // function add(x,y){
+        //     return x+y;
+        // }
+
+        // let result = add(10,20);
+        // console.log(result);
+
+        // result = add('hello' , 'world');
+        // console.log(result);
+
+        // result = add('hello' ,10);
+        // console.log(result);
+
+
+
+        // function hello(){
+        //     console.log('hello');
+        // }
+
+        // hello();
+
+
+
+
+        // let arr = [1,2,3,4,5,6];
+        // arr.splice(2,3,100,200,300);
+        // console.log(arr);
+
+
+
+        // let arr = [1,2,3,4];
+        // arr.length =3;
+        // arr.length =5;
+
+
+        // console.log(arr);
+        
+
+
+        // console.log(arr[4]);
+
+        // arr[-1] = 10;
+        // console.log(arr);
+
+        // arr['hello'] = 10;
+        // console.log(arr['hello']);
+
+        // arr.qq = 10;
+
+
+
+        // let arr = new Array();
+        // let arr = [1,2,3,4];
+        // console.log(arr);
+        // let arr2 = [1,'hello',null,undefined,[1,1,1,1]];
+        // console.log(arr2);
+
+
+                
+        // console.log(1/2);
+
+
+        // let x = null;
+        // if(!x){
+        //     x = 0;
+        // }
+
+        // x = x || 0;
+
+
+
+        // let a =10;
+        // let b = '10';
+
+        // console.log(2&&6);
+
+
+        // let a;
+        // console.log(a);
+
+        // let b = null;
+        // console.log(b);
+
+
+        // let a = false;
+        // console.log(a-1);
+
+
+
+
+        // let s = 'hello world';
+        // let s2 = '你好';
+        // console.log(s2.length);
+
+
+
+        // let s = 'my name is "xiaogougou" ';
+        // console.log(s);
+        // let s2 = "my name is 'dagou'"
+        // console.log(s2);
+        // let s3 = "my 'name' is \"xiaogou\"  ";
+        // console.log(s3);
+        
+
+
+
+        //console.log('hello' + 10);
+
+
+        // {
+        //     let a = 10;
+        // }
+        // console.log(a);
+
+
+        // let a = 10;
+        // a  = 20;
+        // a = 'nihaoww'//动态类型：运行时~~
+        // console.log(a);
+
+        
+        // var num = 10;
+        // var s = 'hello';
+        // var arr = [];
+
+    </script>
+
+
+
+
+
+
+
+
+
+    <!-- <script>
+        console.log('hello log');
+        console.log('aaaa');
+
+    </script>
+    
+    
+     -->
+    
+    
+    
+    
+    <!-- <button onclick="alert('hello')">这是一个按钮</button> -->
+    <!-- <script src="app.js"></script> -->
+
+    <!-- <script>
+        alert("hello");
+    </script> -->
+</body>
+</html>
