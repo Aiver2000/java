@@ -1,0 +1,44 @@
+/* 博客列表样式 */
+
+.blog{
+    width: 100%;
+    padding:20px ;
+}
+
+.blog .title{
+    text-align: center;
+    font-size: 22px;
+    font-weight: bold;
+    padding: 10px 0;
+
+
+}
+.blog .date{
+    text-align: center;
+    color:green;
+    padding: 10px 0;
+}
+
+.blog .desc{
+    text-indent: 2em;
+}
+
+.blog a{
+    display: block;
+    width: 140px;
+    height: 40px;
+    margin:10px auto;
+    border:2px black solid;
+
+    color:black;
+    line-height: 40px;
+    text-align: center;
+    text-decoration: none;
+
+    transition: all 0.5s;
+}
+
+.blog a:hover{
+    background: #333;
+    color:#fff;
+}

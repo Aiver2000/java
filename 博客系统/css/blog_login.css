@@ -1,0 +1,63 @@
+/* login 样式 */
+
+.login-container{
+    width: 100%;
+    height: calc(100% - 50px);
+
+    display: flex;
+    align-items: center;
+    justify-content:center;
+}
+
+.login-dialog{
+    width: 400px;
+    height: 400px;
+    background-color: rgba(255,255,255,0.9);
+    border-radius: 10px;
+}
+
+.login-dialog h3{
+    text-align: center;
+    padding: 50px 0;
+}
+
+.login-dialog .row{
+    height: 50px;
+    width: 100%;
+
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-dialog .row span{
+    display: block;
+    width: 80px;
+    font-weight: 700;
+
+}
+
+#username, #password{
+    width: 200px;
+    height: 30px;
+    font-size: 15px;
+    line-height: 40px;
+    padding-left: 5px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+}
+
+.row button{
+    width: 200px;
+    height: 50px;
+    border-radius: 10px;
+    color: white;
+    background-color: rgb(144, 230, 144);
+    border: none;
+    outline:none;
+    margin-top :50px;
+}
+.row button:active{
+    background-color: #666;
+}
