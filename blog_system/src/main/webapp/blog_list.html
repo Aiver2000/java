@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/bolg_list.css">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <div class="nav">
+        <img src="./image/lisa.jpg" alt="">
+        <span>我的博客系统</span>
+        <!-- 空白元素占位 -->
+        <div class="spacer"></div>
+        <a href="blog_list.html">主页</a>
+        <a href="blog_edit.html">写博客</a>
+        <a href="logout">注销</a>
+    </div>
+    <!-- 版心 -->
+    <div class="container">
+        <!-- 左侧个人信息 -->
+        <div class="left">
+            <!-- 整个用户信息区域 -->
+            <div class="card">
+                <img src="./image/doge.jpg" alt="">
+                <h3></h3>
+                <a href="#">github</a>
+                <div class="counter">
+                    <span>文章</span>
+                    <span>分类</span>
+                </div>
+                <div class="counter">
+                    <span>2</span>
+                    <span>1</span>
+                </div>
+            </div>
+        </div>
+        <!-- 右侧内容详情 -->
+        <div class="right">
+            <!-- <div class="blog">
+                <div class="title">
+                 我的第一篇博客
+                </div>
+                <div class="date">
+                    2022-05-05 20:52:00
+                </div>
+                <div class="desc">
+                    从今天起，Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempora molestiae ea quis sequi nemo assumenda deleniti placeat maiores, nostrum voluptatibus dolores fugiat quaerat unde dolorum nihil. Sit quasi deserunt animi!
+                </div>
+                <a href="#">查看全文 &gt;&gt; </a>
+            </div>
+            <div class="blog">
+                <div class="title">
+                    我的第一篇博客
+                </div>
+                <div class="date">
+                    2022-05-05 20:52:00
+                </div>
+                <div class="desc">
+                    从今天起，Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempora molestiae ea quis sequi nemo assumenda deleniti placeat maiores, nostrum voluptatibus dolores fugiat quaerat unde dolorum nihil. Sit quasi deserunt animi!
+                </div>
+                <a href="#">查看全文 &gt;&gt; </a>
+            </div> -->
+            
+
+        </div>
+    </div>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script>
+        function getBlogList(){
+            $.ajax({
+                type:'get',
+                url:'blog',
+                success:function(body){
+                    let rightDiv = document.querySelector('.right');
+                    rightDiv.innerHTML = '';
+                    for(let blog of body){
+                        let blogDiv = document.createElement('div');
+                        blogDiv.className = 'blog';
+                        let titleDiv = document.createElement('div');
+                        titleDiv.className = 'title';
+                        titleDiv.innerHTML = blog.title;
+                        blogDiv.appendChild(titleDiv);
+                        let dateDiv = document.createElement('div');
+                        dateDiv.className = 'date';
+                        dateDiv.innerHTML = blog.postTime;
+                        blogDiv.appendChild(dateDiv);
+                        let descDiv = document.createElement('div');
+                        descDiv.className = 'desc';
+                        descDiv.innerHTML = blog.content;
+                        blogDiv.appendChild(descDiv);
+                        let a = document.createElement('a');
+                        a.innerHTML = '查看全文 &gt;&gt;';
+                        a.href = 'blog_detail.html?blogId='+blog.blogId;
+                        blogDiv.appendChild(a);
+                        rightDiv.appendChild(blogDiv);
+                    }
+                },
+                error:function(){
+                    alert("获取博客列表失败！");
+                }
+            });
+        }
+        getBlogList();
+        function getUserInfo(){
+            $.ajax({
+                type:'get',
+                url:'login',
+                success:function(body){
+                    if(body.userId && body.userId >0){
+                        console.log("当前用户登录成功，用户名："+body.userName);
+                        changeUserName(body.userName);
+                    }else{
+                        alert("当前您尚未登录！请登录后再访问博客列表~")
+                        location.assign('blog_login.html');
+                    }
+                },
+                error:function(){
+                    alert("当前您尚未登录！请登录后再访问博客列表~")
+                    location.assign('blog_login.html');
+                }
+            });
+        }
+        getUserInfo();
+
+        function changeUserName(userName){
+            let h3 = document.querySelector('.card>h3');
+            h3.innerHTML = userName;
+        }
+    </script>
+</body>
+</html>

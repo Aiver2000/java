@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/bolg_detail.css">
+    <link rel="stylesheet" href="editor.md/css/editormd.min.css">
+    <script src="js/jquery.min.js"></script>
+    <script src="editor.md/lib/marked.min.js"></script>
+    <script src="editor.md/lib/prettify.min.js"></script>
+    <script src="editor.md/editormd.js"></script>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <div class="nav">
+        <img src="./image/lisa.jpg" alt="">
+        <span>我的博客系统</span>
+        <!-- 空白元素占位 -->
+        <div class="spacer"></div>
+        <a href="blog_list.html">主页</a>
+        <a href="blog_edit.html">写博客</a>
+        <a href="logout">注销</a>
+    </div>
+    <div class="container">
+        <!-- 左侧个人信息 -->
+        <div class="left">
+            <!-- 整个用户信息区域 -->
+            <div class="card">
+                <img src="./image/doge.jpg" alt="">
+                <h3></h3>
+                <a href="#">github</a>
+                <div class="counter">
+                    <span>文章</span>
+                    <span>分类</span>
+                </div>
+                <div class="counter">
+                    <span>2</span>
+                    <span>1</span>
+                </div>
+            </div>
+        </div> 
+        <div class="right">
+            <div class="blog-content">
+                <h3></h3>
+                <div class="date"></div>
+                <div id="content" style="opacity:80%">
+
+                </div>
+            </div>
+        </div>      
+    </div>
+
+    <script>
+        function getBlogDetail(){
+            $.ajax({
+                type:'get',
+                url:'blog'+ location.search,
+                success:function(body){
+                    let h3= document.querySelector(".blog-content>h3")
+                    h3.innerHTML = body.title;
+                    let dateDiv = document.querySelector('.date');
+                    dateDiv.innerHTML = body.postTime;
+                    // let content = document.querySelector('#content');
+                    // content.innerHTML= body.content;
+                    editormd.markdownToHTML('content',{
+                        markdown:body.content
+                    });
+                },
+                // error:
+
+            });
+        }
+        getBlogDetail();
+        function getUserInfo(){
+            $.ajax({
+                type:'get',
+                url:'login',
+                success:function(body){
+                    if(body.userId && body.userId >0){
+                        console.log("当前用户登录成功，用户名："+body.userName);
+                        getAuthorInfo(body);
+
+                    }else{
+                        alert("当前您尚未登录！请登录后再访问博客列表~")
+                        location.assign('blog_login.html');
+                    }
+                },
+                error:function(){
+                    alert("当前您尚未登录！请登录后再访问博客列表~")
+                    location.assign('blog_login.html');
+                }
+            });
+        }
+        getUserInfo();
+
+        function getAuthorInfo(user){
+            $.ajax({
+                type:'get',
+                url:'authorInfo'+location.search,
+                success:function(body){
+                    if(body.userName){
+                        changeUserName(body.userName);
+                        if(body.userName == user.userName){
+                            let navDic = document.querySelector(".nav");
+                            let a = document.createElement('a');
+                            a.innerHTML = '删除';
+                            a.href = 'blogDelete'+location.search;
+                            navDic.appendChild(a);
+                        }
+                    }else{
+                        console.log("获取作者信息失败!"+body.reason);
+                    }
+                }
+            });
+        }
+
+        function changeUserName(userName){
+            let h3 = document.querySelector('.card>h3');
+            h3.innerHTML = userName;
+        }
+    </script>
+</body>
+</html>
